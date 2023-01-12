@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Styles.CSS" />
+</head>
+
+<body>
+    <H1>Hei</H1>
+    Æ hete Rudi-Andrè Nilsen å kommer fra Sørøya men bor i Alta.
+    <ul>Mine hobbyer er:</ul>
+
+    <ul>
+        <li>Garasjetid</li>
+        <li>Familietid</li>
+        <Li>Musikk</L>
+        <li>gaming</li>
+    </ul>
+    <img src="/Nilsen/mee.jpg" width="200" height="250">
+
+    <button id="color">color</button>
+
+    <script>
+      
+    const button = document.getElementById('color');
+
+      button.addEventListener('click', () => {
+        const r = Math.floor(Math.random() * 256); // mathfloor, runder alltid ned så det ikke er float, math random er ett tall fra 0 til 1. psuedo random.
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const color = 'rgb(' + r + ', ' + g + ', ' + b + ')'; // rgb er funksjon for css i css hadde det sett slik ut, document.body.style.color = 'rgb(128,128,123)';
+        console.log(color)
+        document.body.style.backgroundColor = color; // 
+      });
+
+
+    </script>
+    
+</body>
+</html>
