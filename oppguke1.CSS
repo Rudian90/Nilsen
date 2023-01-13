@@ -10,7 +10,7 @@ body{
     height:100vh;
     display: grid;
     place-items: center;
-    background:rgb(104, 104, 104);
+    background:rgb(190, 190, 190);
 }
 .button{
     /* float: lef; */
