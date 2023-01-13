@@ -34,52 +34,54 @@
     <div class="button">
       <div class="icon">
         <i class="fab fa-linkedin"></i>
-        </div>
-        <span>Linkedin</span>
-        </div>
+      </div>
+      <span>Linkedin</span>
+    </div>
     <div class="button">
       <div class="icon">
         <i class="fab fa-youtube"></i>
       </div>
       <span>Youtube</span>
+    </div>
+    <div class="button">
+      <div class="icon">
+        <i class="fab fa-github"></i>
       </div>
-      <div class="button">
-        <div class="icon">
-          <i class="fab fa-github"></i>
-        </div>
-        <span>Github</span>
-      </div>
+      <span>Github</span>
+    </div>
   </section>
 
-<H1>Mr.Nilsen</H1>
-Jeg heter Rudi-Andrè Nilsen å kommer fra Sørøya men bor i Alta.
-<ul>Mine hobbyer er:</ul>
 
-<ul>
-  <li>Garasjetid</li>
-  <li>Familietid</li>
-  <li>Musikk (gitar)</li>
-  <li>gaming</li>
-</ul>
-<img src="/Nilsen/mee.jpg" width="200" height="250">
+  <h1 style="text-align: left;">Mr.Nilsen </h1>
+    Jeg heter Rudi-Andrè Nilsen å kommer fra Sørøya, men bor i Alta.
 
-<button id="color">color</button>
+    <ul>Mine hobbyer er:</ul>
 
-<script>
+    <ul>
+      <li>Garasjetid</li>
+      <li>Familietid</li>
+      <li>Musikk (gitar)</li>
+      <li>gaming</li>
+    </ul>
+    <img src="/Nilsen/mee.jpg" width="200" height="250">
 
-  const button = document.getElementById('color');
+    <button id="color">color</button>
 
-  button.addEventListener('click', () => {
-    const r = Math.floor(Math.random() * 256); // mathfloor, runder alltid ned så det ikke er float, math random er ett tall fra 0 til 1. psuedo random.
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    const color = 'rgb(' + r + ', ' + g + ', ' + b + ')'; // rgb er funksjon for css i css hadde det sett slik ut, document.body.style.color = 'rgb(128,128,123)';
-    console.log(color)
-    document.body.style.backgroundColor = color; // 
-  });
+    <script>
+
+      const button = document.getElementById('color');
+
+      button.addEventListener('click', () => {
+        const r = Math.floor(Math.random() * 256); // mathfloor, runder alltid ned så det ikke er float, math random er ett tall fra 0 til 1. psuedo random.
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        const color = 'rgb(' + r + ', ' + g + ', ' + b + ')'; // rgb er funksjon for css i css hadde det sett slik ut, document.body.style.color = 'rgb(128,128,123)';
+        console.log(color)
+        document.body.style.backgroundColor = color; // 
+      });
 
 
-</script>
+    </script>
 
 </body>
 
