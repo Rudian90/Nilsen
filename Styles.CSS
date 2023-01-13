@@ -45,3 +45,44 @@ body {
 p {
     padding-left: 10px
 }
+
+.button:hover i{
+    color#fff;
+}
+.button:nth-child(1):hover .icon{
+    background: #4267d2;
+}
+.button:nth-child(2):hover .icon{
+    background: #e1306c;
+}
+.button:nth-child(3):hover .icon{
+    background: #1da1f2;
+}
+.button:nth-child(4):hover .icon{
+    background: #0e76a8;
+}
+.button:nth-child(5):hover .icon{
+    background: #ff0000;
+}
+.button:nth-child(6):hover .icon{
+    background: #333;
+}
+.button:nth-child(1){
+    color:#4267d2;
+}
+.button:nth-child(2){
+    color:#e1306c;
+}
+.button:nth-child(3){
+    color:#1da1f2;
+}
+.button:nth-child(4){
+    color:#0e76a8;
+}
+.button:nth-child(5){
+    color:#ff0000;
+}
+.button:nth-child(6){
+    color:#333;
+}
+

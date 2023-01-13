@@ -131,23 +131,91 @@
         <div class="header dark">
             Hode kropp Og ben
         </Div>
+
         <div>
-            <div>
-                <button>◀</button>
-                <img src="img/head1.png" />
-                <button>▶</button>
-            </div>
-            <div>
-                <button>◀</button>
-                <img src="img/body1.png" />
-                <button>▶</button>
-            </div>
-            <div>
-                <button>◀</button>
-                <img src="img/legs1.png" />
-                <button>▶</button>
-            </div>
+            <button>◀</button>
+            <img src="img/head1.png" />
+            <button>▶</button>
         </div>
+
+
+        <div>
+            <button>◀</button>
+            <img src="img/body1.png" />
+            <button>▶</button>
+        </div>
+
+
+        <div>
+            <button>◀</button>
+            <img src="img/legs1.png" />
+            <button>▶</button>
+        </div>
+
+
+        <script>
+            showNumber1();
+            function showNumber1() {
+                document.getElementById('numberAndButtons').innerHTML = /*HTML*/`
+        <button onclick="showNumber4()">
+            ◀
+        </button>
+        <div style="width: 40px; text-algin: center;">
+            <img src="img/head1.png"/>
+        </div>
+        <button onclick="showNumber2()">
+            ▶
+        </button>
+        `;
+
+            }
+            showNumber2();
+            function showNumber1() {
+                document.getElementById('numberAndButtons').innerHTML = /*HTML*/`
+        <button onclick="showNumber1()">
+            ◀
+        </button>
+        <div style="width: 40px; text-algin: center;">
+            <img src="img/head2.png" />
+        </div>
+        <button onclick="showNumber3()">
+            ▶
+        </button>
+        `;
+
+            }
+            showNumber3();
+            function showNumber1() {
+                document.getElementById('numberAndButtons').innerHTML = /*HTML*/`
+        <button onclick="showNumber2()">
+            ◀
+        </button>
+        <div style="width: 40px; text-algin: center;">
+            <img src="img/head3.png" />
+        </div>
+        <button onclick="showNumber4()">
+            ▶
+        </button>
+        `;
+
+            }
+            showNumber4();
+            function showNumber1() {
+                document.getElementById('numberAndButtons').innerHTML = /*HTML*/`
+        <button onclick="showNumber3()">
+            ◀
+        </button>
+        <div style="width: 40px; text-algin: center;">
+            <img src="img/head4.png"/>
+        </div>
+        <button onclick="showNumber1()">
+            ▶
+        </button>
+        `;
+
+            }
+
+        </script>
 </body>
 
 </html>
