@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="oppguke1.CSS" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-
 
   <section class="wrapper">
     <div class="button">
@@ -50,39 +50,38 @@
       <span>Github</span>
     </div>
   </section>
-
-
-  <h1 style="text-align: left;">Mr.Nilsen </h1>
-    Jeg heter Rudi-Andrè Nilsen å kommer fra Sørøya, men bor i Alta.
-
-    <ul>Mine hobbyer er:</ul>
-
-    <ul>
-      <li>Garasjetid</li>
-      <li>Familietid</li>
-      <li>Musikk (gitar)</li>
-      <li>gaming</li>
-    </ul>
-    <img src="/Nilsen/mee.jpg" width="200" height="250">
-
-    <button id="color">color</button>
-
-    <script>
-
-      const button = document.getElementById('color');
-
-      button.addEventListener('click', () => {
-        const r = Math.floor(Math.random() * 256); // mathfloor, runder alltid ned så det ikke er float, math random er ett tall fra 0 til 1. psuedo random.
-        const g = Math.floor(Math.random() * 256);
-        const b = Math.floor(Math.random() * 256);
-        const color = 'rgb(' + r + ', ' + g + ', ' + b + ')'; // rgb er funksjon for css i css hadde det sett slik ut, document.body.style.color = 'rgb(128,128,123)';
-        console.log(color)
-        document.body.style.backgroundColor = color; // 
-      });
-
-
-    </script>
-
 </body>
 
+
+  <div class="Style">
+    <h1>Mr.Nilsen </h1>
+      Jeg heter Rudi-Andrè Nilsen å kommer fra Sørøya, men bor i Alta
+      <ul>Mine hobbyer er:</ul>
+  
+      <ul>
+        <li>Garasjetid</li>
+        <li>Familietid</li>
+        <li>Musikk (gitar)</li>
+        <li>gaming</li>
+      </ul>
+      <img src="/Nilsen/mee.jpg" width="200" height="250">
+  <br>
+      <button id="color">color</button>
+    </div>
+
+  <script>
+  
+    const button = document.getElementById('color');
+
+    button.addEventListener('click', () => {
+      const r = Math.floor(Math.random() * 256); // mathfloor, runder alltid ned så det ikke er float, math random er ett tall fra 0 til 1. psuedo random.
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      const color = 'rgb(' + r + ', ' + g + ', ' + b + ')'; // rgb er funksjon for css i css hadde det sett slik ut, document.body.style.color = 'rgb(128,128,123)';
+      console.log(color)
+      document.body.style.backgroundColor = color; // 
+    });
+
+
+  </script>
 </html>
