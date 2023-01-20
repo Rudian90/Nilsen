@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        html { background-color: azure;}
+    </style>
+
+    <h1>Three Coins Of Cryptocurrency</h1><br>
+
+    <img id="con1" onclick="addpicturexrp('con1','150px')" class="shadow"/>
+    <img id="con2" onclick="addpicturexrp('con2','150px')" class="shadow"/>
+    <img id="con3" onclick="addpicturexrp('con3','150px')" class="shadow"/>
+    <script>
+        
+       function getPicIfElse(){
+            let mynumber = Math.ceil(Math.random()* 3);
+            console.log(mynumber)
+            if(mynumber === 1){
+                return 'bt.jpg';
+            } 
+            else if(mynumber === 2) {
+                return 'dg.jpeg';
+            }
+            else {
+               return 'xrp.jpg';
+            }
+        }
+
+        function addpictureBt(elem) { /* sender inn html element*/
+            console.log(elem)
+            elem.src = 'dg.Jpeg'
+        }
+
+        function addpicturexrp(pictureid, height) // sender med id (string) 
+        {
+            let picResult = getPicIfElse();
+            document.getElementById(pictureid).src = picResult;
+            document.getElementById(pictureid).style.height = height;
+        }
+    </script>
+    <style>
+        .shadow{
+            height: 150px;
+            width: 150px;
+            box-shadow: 7px 5px 5px
+        }
+    </style>
+</body>
+</html>

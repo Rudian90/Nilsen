@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivå 2</title>
+</head>
+
+<body>
+
+    <div id="mainDiv"></div>
+    <button onclick="test('red',50,100)">Test 1</button>
+    <button onclick="tes2('Blue',75,200)">Test 2</button>
+
+    <Script>
+        function Test(color,width,height) {
+            document.getElementById('mainDiv').innerHTML = /*html*/`
+                    <div style="background-color:${color}; width: ${width}%; height:${height}100px; "></div> 
+                        `;
+        }
+
+        function test2(color) {
+            document.getElementById('mainDiv').innerHTML = /*html*/`
+                    <div style="background-color:${Color}; width: 100%; height:100px; "></div> 
+                        `;
+                    }
+    
+    </Script>
+
+
+</body>
+</html>
