@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historie</title>
+
+    <Style>
+        div{
+            float: left;
+            margin: 10px;
+        }
+
+        .Storybox{
+            border: 2px dashed blue;
+            padding: 30px;
+            font-size: 25px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .Startboks{
+            clear: left;
+        }
+
+        .velgboks{
+            font-size: 20px;
+            background-color: rgb(241, 241, 30);
+            border: 20px solid rgb(14, 14, 14);
+            border-radius: 50px;
+            padding: 10px;
+            width: 70px;
+            height: 30px;
+            text-align: center;
+        }
+    </Style>
+</head>
+
+<body>
+    <div class="Storybox" id="Mystory">
+    </div>
+
+    <div class="Startboks velgboks" onclick="ChooseWord1(this)">red</div>
+    <div class="velgboks" onclick="ChooseWord1(this)">Sort</div>
+
+    <div class="Startboks velgboks" onclick="ChooseWord2(this)">fly</div>
+    <div class="velgboks" onclick="ChooseWord2(this)">Båt</div>
+
+    <div class="Startboks velgboks" onclick="ChooseWord3(this)">Startet</div>
+    <div class="velgboks" onclick="ChooseWord3(this)">lettet</div>
+
+    <div class="Startboks velgboks" onclick="ChooseWord4(this)">sank</div>
+    <div class="velgboks" onclick="ChooseWord4(this)">styrtet</div>
+
+
+    <script>
+        const output = document.getElementById("Mystory");
+        let Word1 = "___";
+        let Word2 = "___";
+        let Word3 = "___";
+        let Word4 = "___";
+        buildStory();
+
+        function buildStory() {
+            output.innerHTML = `
+            Det var en gang en ${Word1} ${Word2} som ${Word3} og kjørte, men til slutt ${Word4} på fjorden. -
+    `;
+        }
+
+        function ChooseWord1(start) {
+            Word1 = start.innerHTML;
+            buildStory();
+        }
+        function ChooseWord2(start) {
+            Word2 = start.innerHTML;
+            buildStory();
+        }
+
+        function ChooseWord3(start) {
+            Word3 = start.innerHTML;
+            buildStory();
+        }
+        function ChooseWord4(start) {
+            Word4 = start.innerHTML;
+            buildStory();
+        }
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
