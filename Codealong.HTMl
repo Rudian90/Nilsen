@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codealong</title>
+</head>
+
+<body>
+
+    <div id="hei">hei</div>
+    <div id="hallo">hallo</div>
+
+    <button onclick="byttekst()">test</button>
+    <button onclick="byttord()">bytt</button>
+
+    <script>
+        function byttekst() {
+            tekst = document.getElementById('hallo').innerHTML
+            document.getElementById('hei').innerHTML = tekst
+        }
+
+        let tekst
+        let bytt
+        let bytt1
+
+        function byttord() {
+            bytt = document.getElementById('hei').innerHTML 
+            bytt1 = document.getElementById('hallo').innerHTML 
+            document.getElementById('hei').innerHTML = bytt1
+            document.getElementById('hallo').innerHTML = bytt
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

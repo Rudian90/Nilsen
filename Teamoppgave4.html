@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plante Team4</title>
+</head>
+
+<body>
+
+    <h1>Plante Team4</h1>
+
+    <div id="Plante">
+        <div id="vann"></div>
+        <div id="sol"></div>
+        <div id="vekst"></div>
+
+    </div>
+
+    <br>
+    <button onclick="Playgame()">Start Game</button>
+    <button onclick="Stop()">Stop Game</button>
+    <br>
+    <br>
+    <button onclick="næring()">Vann</button>
+    <button onclick="næring()">vekst</button>
+    <button onclick="næring()">Sol</button>
+
+
+
+    <script>
+        let vann2 = document.getElementById('vann')
+        let sol2 = document.getElementById('sol')
+        let vekst2 = document.getElementById('vekst')
+
+        let vann = 60;
+        let sol = 60;
+        let vekst = 60;
+        let Trekk;
+
+        function Playgame() {
+
+            Trekk = setInterval(TrekkerIFraSekunder,1000);
+
+        }
+
+
+        function TrekkerIFraSekunder() {
+            vann2.innerHTML = vann--;
+            sol2.innerHTML = sol-= 1;
+            vekst2.innerHTML = vekst-= 1;
+        }
+        function Stop() {
+            clearInterval(Trekk)
+        }
+        
+
+    </script>
+
+
+</body>
+
+</html>
