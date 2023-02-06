@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    
+    , initial-scale=1.0">
+    <title>Trafikklys</title>
+</head>
+
+
+
+<body>
+
+    <div class="trafikklys">
+        <div id="Grønn" class="Grønn"></div>
+        <div id="Gul" class="Gul"></div>
+        <div id="Rød" class="Rød"></div>
+    </div>
+    <br>
+
+    <button onclick="activeLight('Rød')">Rødt Lys</button>
+    <button onclick="activeLight('Gul')">Gult lys</button>
+    <button onclick="activeLight('Grønn')">Grønt lys</button>
+    <button onclick="Startlight()">Start</button>
+
+
+    <script>
+        let lagreinterval 
+
+
+        function activeLight(lys) {
+            clearInterval(lagreinterval);
+            if (lys == 'Rød') [Rød.style.opacity = "100%", Grønn.style.opacity = "0%", Gul.style.opacity = "0%",]
+            else if (lys == 'Gul') [Gul.style.opacity = "100%", Rød.style.opacity = "0%", Grønn.style.opacity = "0%",]
+            else if (lys == 'Grønn') [Grønn.style.opacity = "100%", Rød.style.opacity = "0%", Gul.style.opacity = "0%",]
+        }
+
+        function Startlight() {
+          lagreinterval = setInterval(Grønn1, 9000) 
+        }
+        function Grønn1() {
+            Grønn.style.opacity = "100%"
+            Rød.style.opacity = "0%"
+            setTimeout(Gul1, 3000)
+
+        }
+        function Gul1() {
+            Grønn.style.opacity = "0%"
+            Gul.style.opacity = "100%"
+            setTimeout(Rød1, 3000)
+        }
+
+        function Rød1() {
+            Rød.style.opacity = "100%"
+            Gul.style.opacity = "0%"
+            setTimeout(Grønn1,3000)
+        }
+        
+
+
+
+
+
+    </script>
+
+
+    <style>
+        .trafikklys {
+
+            border-radius: 0%;
+            width: 70px;
+            height: 240px;
+            background-color: rgb(5, 5, 5);
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+        }
+
+        .Grønn {
+
+            border-radius: 150%;
+            padding: 15px;
+            width: 30px;
+            height: 40px;
+            background-color: rgb(4, 104, 4);
+            border-style: groove;
+            opacity: 15%;
+
+
+        }
+
+        .Gul {
+            border-radius: 50%;
+            padding: 15px;
+            width: 30px;
+            height: 40px;
+            background-color: rgb(146, 146, 2);
+            border-style: groove;
+            opacity: 15%;
+
+        }
+
+        .Rød {
+            border-radius: 50%;
+            padding: 15px;
+            width: 30px;
+            height: 40px;
+            background-color: rgb(146, 3, 3);
+            border-style: groove;
+            opacity: 15%;
+
+
+
+        }
+    </style>
+
+
+
+</html>
