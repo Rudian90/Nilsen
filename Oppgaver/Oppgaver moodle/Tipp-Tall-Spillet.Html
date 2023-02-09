@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipptallspillet</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+    <script>
+        //model
+        let guessNumber;
+        let secretNumber;
+
+
+        //view
+
+        function updateView() {
+            const guessText = guessNumber == null ? '' : `Du tippet ${guessNumber}.<br/>`;
+
+            let isCorrectOrNotText;
+            if (guessNumber == null) {
+                isCorrectOrNotText = 'Skriv inn tallet du vil tippe i feltet under og trykk op knappen "Tipp"<br>';
+            } else if (guessNumber == secretNumber) {
+                isCorrectOrNotText = '<br>Du har tippet riktig!</br>';
+            } else if (guessNumber < secretNumber) {
+                isCorrectOrNotText = 'Du har tippet for lavt.';
+            } else {
+                isCorrectOrNotText = 'Du har tippet for høyt'
+            }
+
+
+            document.getElementById('app').innerHTML = `
+<h2>Tipp-tallet-spillet</h2>
+
+
+
+${guessText}
+${isCorrectOrNotText}
+
+<input type="text" oninput="guessNumber = parseInt(this.value)" />
+<button onclick="guess()">Tipp</button>
+
+<button onclick?"startgame()">Start på nytt</button>
+`;
+
+        }
+
+
+        //controller
+        startgame();
+        function startgame() {
+            guessNumber = null;
+            secretNumber = Math.ceil(Math.random() * 100);
+            updateView();
+        }
+
+        function guess() {
+            updateView();
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

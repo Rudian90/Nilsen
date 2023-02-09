@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <img src="/Nilsen/Krokodille.jpg">
+    <div>Poeng: 0</div>
+    <div id="FirstNum"></div>
+    <input type="text"></input>
+    <div id="SecondNum"></div>
+    <button onclick="submit()">Submit</button>
+    <button onclick="reset()">Reset</button>
+
+    <script>
+        let FirstNum = 0;
+        let SecondNum = 0;
+
+
+        function reset() {
+            updateNumbers();
+        }
+
+        function updateNumbers() {
+            FirstNum = getRandomNumber();
+            SecondNum = getRandomNumber();
+            document.getElementById("FirstNum").innerHTML = FirstNum;
+            document.getElementById("SecondNum").innerHTML = SecondNum;
+
+        }
+
+        function getRandomNumber(){
+            return Math.round(Math.random() * 10);
+        }
+
+
+
+    </script>
+
+</body>
+
+<style>
+    img {
+        height: 200px;
+        width: 200px;
+    }
+</style>
+
+</html>
