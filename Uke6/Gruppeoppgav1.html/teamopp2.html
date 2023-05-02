@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car game</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="cool"></div>
+            <img src="Road0.jpg" id="road">
+            <br>
+            <br>
+            <button id="go" onclick="kjør()">Drive</button>
+            <button onclick="stop()">Break</button>
+            <br>
+            <br>
+            <button onclick="hils('Mar')">Hils Mario</button>
+            <button onclick="hils('Lui')">Hils Luigi</button>
+            <button onclick="hils('Bow')">Hils Bowser</button>
+            <button onclick="hils('War')">Hils Wario</button>
+    </div>
+
+
+    <script>
+        let roadImgs = document.getElementById('road');
+        let hilsen = document.getElementById('road');
+        let lagrepng;
+        let hilsImgs = ['Road1.1.png','Road2.1.png','Road3.1.png','Road4.1.png'];
+        let change;
+        let myImgs = ['Road0.jpg','road1.jpg','Road2.jpg','Road3.jpg','Road4.jpg',];
+        let fHilsImgs = ['road1.2.png','Road2.2.png','Road3.2.png','Road4.2.png']
+       
+        function randomPic() {
+            let randomPic = Math.floor(Math.random()* myImgs.length);
+            lagrepng = myImgs[randomPic];
+            return myImgs[randomPic]
+        }
+        function kjør() {
+           change = setInterval(animasjon,500)
+           document.getElementById('go').disabled = true;
+        }
+        function animasjon(){
+        roadImgs.src = randomPic(myImgs)
+        }
+        function stop() {
+            clearInterval(change);
+            document.getElementById('go').disabled = false;
+        }
+        function hils(hils) {
+            if (lagrepng == 'road1.jpg'&& hils =='Mar') {
+                hilsen.src = 'mario.png'['road1.jpg']
+            }
+            else {hilsen.src = fHilsImgs[0]}
+        
+            if (lagrepng == 'Road2.jpg' && hils == 'Lui') {
+                roadImgs.src = hilsImgs['Road2.1.png']
+            }
+            else {roadImgs.src = fHilsImgs['Road2.2.png']}
+       
+            if (lagrepng == 'Road3.jpg' && hils == 'Bow') {
+                roadImgs.src = hilsImgs['Road3.1.png']
+            }
+            else {roadImgs.src = fHilsImgs['Road3.2.png']}
+
+            if (lagrepng == 'Road4.jpg' && hils == 'War') {
+                roadImgs.scr = hilsImgs['Road4.1.png']
+            }
+            else {roadImgs.src = fHilsImgs['Road4.2.png']}
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    
+    <div class="register">
+        <h2>Fill in your detials:</h2> 
+        <form name="form1"> 
+            <ul>
+                <li>
+                    <input type="text" name="email" placeholder="email"> <!-- type="email" sjekker automatisk om det er en email -->
+                </li><br>
+                <li>
+                    <input type="password" name="password" placeholder="password">
+                </li><br>
+                <li>
+                    <input type="date" name="birthdate">
+                </li>
+                <br><br><br><br>
+                <li>
+                    <input type="submit" name="submit" onclick="validateInputs(document.form1)"> <input type="reset" value="Reset">
+                </li>
+            </ul>
+        </form>
+    </div>
+    
+</body>
+
+<script>
+
+    function validateInputs(inputForm){
+        if (!validateEmail(inputForm.email)){
+            alert("Invalid email");
+            return;
+        }
+        if(!validatePassword(inputForm.password)){
+            alert("Invalid password. \nMust be between 6 and 16 characters long.\nMust include a number.\nMust include a special character");
+            return;
+        }
+        if (!validateAge(inputForm.birthdate))
+        
+    }
+
+    function validateEmail(input){
+        //denne sjekker om emailen ser slik ut: "xxxxxxx@xxxxxx.xxx"
+        var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; //regex/regular expression. Også kalt greske hieroglypher - bruk google.
+        if (input.value.match(emailRegex)) return true;
+        else return false;
+    }
+
+    function validatePassword(input){
+        var passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/; //sjekker om den inneholder et tall, et tegn og er mellom 6 og 16 tegn langt
+        if (input.value.match(passwordRegex)) return true;
+        else return false;
+    }
+
+    function validateAge(input){
+        //her trenger du ikke regex!
+        //sjekk om brukern er over 18 år
+    }
+
+    
+
+</script>
+
+<style>
+    .register{
+        margin: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 400px;
+        background: #D8F1F8;
+        border: 1px solid silver;
+    }
+
+    .register h2{
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    input {
+        font-size: 20pt;
+    }
+
+    input:focus, text:focus{
+        background-color: lightyellow;
+    }
+
+    input submit{
+        font-size: 12pt;
+    }
+
+    li {
+        list-style-type: none;
+        font-size: 16pt;
+    }
+</style>
+
+</html>

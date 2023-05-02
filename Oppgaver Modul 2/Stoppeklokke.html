@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            background-color: blueviolet;
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            margin-left: 15px;
+            border-radius: 50%;
+            height: 55px;
+            width: 50px;
+        }
+
+        .clock {
+            height: 20px;
+            width: 100%;
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: antiquewhite;
+        }
+
+        .rounds{
+            background-color: antiquewhite;
+            height: 50px;
+            width: 100px;
+            border: 1px solid black;
+            margin-left: 50px;
+            font-size: x-small;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="controls" onclick="Start()">Start timer!</button>
+        <button class="controls" onclick="Pause()">pause timer!</button>
+        <button class="controls" onclick="Stop()">stop timer!</button>
+
+        <div id="test"></div>
+
+        <div id="app" class="clock">
+            Rundetider:
+            <div id="rundeTider" class="rounds">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let app = document.getElementById('app');
+        let time = document.getElementById('rundeTider')
+
+        let seconds = 0;
+        let timer;
+
+        function Start() {
+            timer = setInterval(CountSeconds, 1000);
+            //SetInterval(hva skal jeg gjøre etter, antall millisekunder)
+        }
+
+        function CountSeconds() {
+            app.innerHTML = seconds;
+            seconds++; //seconds = seconds + 1
+        }
+
+        function Pause() {
+            time.innerHTML += `<li>${seconds} sekunder</li>`
+            clearInterval(timer);
+            seconds = 0;
+        }
+
+        function Stop() {
+            location.reload();
+        }
+
+    </script>
+
+</body>
+
+</html>

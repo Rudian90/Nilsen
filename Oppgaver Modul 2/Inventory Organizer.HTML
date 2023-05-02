@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Pack</title>
+    <style>
+        table {
+            border-spacing: 0;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid grey;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+
+    <script>
+
+        let html = /*html*/`
+    <div id="spawn">
+        <h2>Item spawns</h2>
+        <table>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+        </table>
+    </div>
+
+    <div id="inventory">
+        <h2>Inventory</h2>
+        <table>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> </tr>
+        </table>
+    </div>
+`;
+
+        document.getElementById("app").innerHTML += html;
+
+        let cellIndex = 0; //hold styr på hvilken celle neste pokeball skal legges inn i (i inventory)
+        let rowIndex = 0; //hold styr på hvilken rad neste pokeball skal legges inn i (i inventory)
+
+        addEventListeners();
+
+        function addEventListeners() {
+            let spawn = document.getElementById("spawn");
+            let rows = spawn.getElementsByTagName("tr");
+
+            for (let i = 0; i < rows.length; i++) {                                                 //kjør hvoren mange ganger det er antall rader
+                let cells = rows[i].getElementsByTagName("td");                                     //hent cellene på den raden vi er på
+
+                for (let j = 0; j < cells.length; j++) {                                            //kjør hvoren mange ganger det er antall celler
+                    let cell = cells[j];                                                            //hent cella vi er på
+
+                    let rndNum = Math.floor(Math.random() * cells.length);                          //lag et random tall mellom 0 og antall celler på raden
+                    if (rndNum % 3 == 1){                                                           //hvis tallet delt på 3 gir deg 1 i rest
+                        cell.innerHTML = `<img src="img/pokeball.jpg" width=20px; height=20px;>`;   //sett inn bilde i cella
+                        cell.addEventListener("mousedown", function() {                             //hvis cella registrerer et "mousedown event" gjør:
+                            cell.innerHTML = "";                                                    //tøm cella/fjern bildet
+                            let inventory = document.getElementById("inventory");                   //hent invetory
+                            let inventoryTable = inventory.getElementsByTagName("table");           //hent table i inventory
+                            inventoryTable[0].                                                      //grunnen til at det er index her er i tilfelle det er mer enn ett table, så 0 = det første
+                                rows[rowIndex].                                                     //hent riktig rad
+                                cells[cellIndex].                                                   //hent riktig celle
+                                innerHTML = `<img src="img/pokeball.jpg" width=20px; height=20px;>`;//sett inn bilde
+                            cellIndex++;                                                            //øk med 1, så neste bilde blir satt inn i neste celle
+                            if (cellIndex % 4 == 0 ){                                               //hvis cella delt på 4 gir deg 0 i rest gjør:
+                                rowIndex++;                                                         //gå til neste rad
+                                cellIndex = 0;                                                      //start på første celle igjen
+                            }                            
+                        })
+                    } 
+                }
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

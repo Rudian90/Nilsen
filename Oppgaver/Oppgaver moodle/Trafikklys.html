@@ -12,7 +12,7 @@
 
 
 
-<body>
+<body onload="trafikklys()">
     <div class="trafikklys">
         <div id="Grønn" class="Grønn"></div>
         <div id="Gul" class="Gul"></div>
@@ -20,26 +20,78 @@
     </div>
     <br>
 
-    <button onclick="activeLight('Grønn', 'Gul', 'Rød', 'Rød')">Rødt Lys</button>
-    <button onclick="activeLight('Grønn','Grønn', 'Rød', 'Gul')">Gult lys</button>
-    <button onclick="activeLight('Rød', 'Grønn', 'Gul', 'Gul')">Grønt lys</button>
-
-
+    <button id="1" onclick="activeLight(this)">Rødt Lys</button>
+    <button id="2" onclick="activeLight(this)">Gult lys</button>
+    <button id="3" onclick="activeLight(this)">Grønt lys</button>
+    <button onclick="drive()">Kjør</button>
+    <br>
+    <br>
+    
+    <div>
+        <h3>ReactionTime</h3>
+        <ul id="leaderboard">
+            <li></li>
+        </ul>
+    </div>
 
     <script>
-        function trafikklys() {
-            let color = document.querySelectorAll('.Grønn','.Rød','.Gul');
-           /* let Grønn = document.getElementById("Grønn");
-            let Rød = document.getElementById("Rød");
-            let Gul = document.getElementById("Gul");*/
+        var startTime;
 
-            
+        function drive() {
+            if (Grønn.style.opacity == "1") {
+                var clickedTime = Date.now();
+                var reactionTime = (clickedTime - startTime) / 1000; //delt på tusen for sekunder
+
+                var leaderboard = document.getElementById("leaderboard");
+                leaderboard.innerHTML += /*html*/`<li>${reactionTime}s<li>`
+            }
+
+            if (Gul.style.opacity == "1") {
+                alert("For tidlig");
+                trafikklys();
+            }
+
+            if (Rød.style.opacity == "1") {
+                alert("Du har fått bot");
+                trafikklys();
+            }
+        }
+
+        function activeLight(element) {
+            if (element.id == '1') {
+                Grønn.style.opacity = "0%";
+                Rød.style.opacity = "100%"
+                Gul.style.opacity = "0%";
+            }
+            else if (element.id == '2') {
+                Grønn.style.opacity = "0%";
+                Rød.style.opacity = "0%";
+                Gul.style.opacity = "100%"
+            }
+            else if (element.id == '3') {
+                Grønn.style.opacity = "100%";
+                Rød.style.opacity = "0%";
+                Gul.style.opacity = "0%";
+            }
+
+            trafikklys();
+        }
+
+        function trafikklys() {
+            let color = document.querySelectorAll('.Grønn', '.Rød', '.Gul');
+            /* let Grønn = document.getElementById("Grønn");
+             let Rød = document.getElementById("Rød");
+             let Gul = document.getElementById("Gul");*/
+
+
             setTimeout(function () {
                 Grønn.style.opacity = "100%";
                 Rød.style.opacity = "0%";
                 Gul.style.opacity = "0%";
+
+                startTime = Date.now()
             }, 3000);
-    
+
 
             setTimeout(function () {
                 Grønn.style.opacity = "0%";
@@ -61,12 +113,20 @@
 
     </script>
 
-
-
-
-
-
     <style>
+        #leaderboard{
+            height: 150px;
+            width: 150px;
+            background-color: rgba(179, 28, 28, 0.719);
+            align-items: center;
+            border-style: solid;
+            list-style: none;
+        }
+
+
+
+
+
         .trafikklys {
 
             border-radius: 0%;

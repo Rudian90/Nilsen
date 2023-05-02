@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <div id="story"></div>
+        <div id="buttons"></div>
+    </div>
+
+    
+    <script>
+        let app = document.getElementById('story');
+        let buttons = document.getElementById('buttons');
+        let words = [];
+        let counter = 0;
+        let adjektiver = ["aktuell", "alvorlig", "ansvarlig", "berømt", "betydelig", "bevisst", "bred", "dum", "dyp", "ekkel", "eksisterende", "ekte", "enkel", 
+        "ensom", "falsk", "fast", "felles", "fersk", "fjern", "flau", "følsom", "forsiktig", "fremmed", "fryktelig", "glatt", "gravid", "grunnleggende", "heldig",
+         "vill", "ulovlig", "umiddelbar", "urettferdig", "vellykket"];
+
+        function makeButtons(){
+            let output = "";
+            for (let i = 0; i < adjektiver.length; i++) {
+                output += `<button onclick="selectWord(this)">${adjektiver[i]}</button>`;
+                words.push("...");
+            }
+            buttons.innerHTML = output;
+        }
+
+        function selectWord(button){
+            words[counter] = button.innerHTML;
+            counter++;
+            showStory();
+        }
+         
+
+        function showStory(){
+            app.innerHTML = `
+            En ${words[0]}. adjektivhistorie
+            Det var en gang en ${words[1]}. jente og en ${words[2]}. gutt som lekte at
+            de skulle reise på en ${words[3]}. ferie til ${words[4]}. Frankrike.
+            Først ble de kjørt til den ${words[5]}. flyplassen av en ${words[6]}. taxi.
+            Da de kom til flyplassen sjekket de inn den ${words[7]}. bagasjen hos den
+            ${words[8]}. damen som jobbet der. Hun så ${words[9]}. ut da
+            den største kofferten ble lagt på den ${words[10]}. vekten. Jenten og gutten fikk de
+            ${words[11]}. flybillettene sine og gikk igjennom den ${words[12]}.
+            sikkerhetskontrollen.
+            Da de gikk inn på det ${words[13]}. flyet fant de raskt de ${words[14]}.
+            setene som de skulle sitte på. Før flyet kjørte ut på rullebanen fortalte en
+            ${words[15]}. flyvertinne at alle måtte ta på seg de ${words[16]}. setebeltene
+            og slå opp de ${words[17]}. stolryggene.
+            Oppe i luften så de ned på den ${words[18]}. byen med de ${words[19]}.
+            menneskene. Flyturen gikk fort og etter bare to timer landet de i ${words[20]}.
+            Frankrike.
+            I Frankrike var det kjempe ${words[21]}. vær og det var ${words[22]}.
+            palmer. De så til og med et ${words[23]}. villsvin med ${words[24]}. tenner.
+            De dro til det ${words[25]}. hotellet og sjekket inn hos den ${words[26]}.
+            resepsjonisten. De fikk et ${words[27]}. rom med ${words[28]}. utsikt mot
+            havet. Langt ute på havet så de en ${words[29]}. seilskute med et
+            ${words[30]}. seil. De dro på den ${words[31]}. stranden og spiste
+            ${words[32]}. pizza til lunsj.
+            `;
+        }
+
+        makeButtons();
+        showStory();
+    </script>
+
+    
+</body>
+</html>
+
+
+<!--
+
+En ……………………………. adjektivhistorie
+Det var en gang en ……………………………. jente og en ……………………………. gutt som lekte at
+de skulle reise på en ……………………………. ferie til ……………………………. Frankrike.
+Først ble de kjørt til den ……………………………. flyplassen av en ……………………………. taxi.
+Da de kom til flyplassen sjekket de inn den ……………………………. bagasjen hos den
+……………………………. damen som jobbet der. Hun så ……………………………. ut da
+den største kofferten ble lagt på den ……………………………. vekten. Jenten og gutten fikk de
+……………………………. flybillettene sine og gikk igjennom den …………………………….
+sikkerhetskontrollen.
+Da de gikk inn på det ……………………………. flyet fant de raskt de …………………………….
+setene som de skulle sitte på. Før flyet kjørte ut på rullebanen fortalte en
+……………………………. flyvertinne at alle måtte ta på seg de ……………………………. setebeltene
+og slå opp de ……………………………. stolryggene.
+Oppe i luften så de ned på den ……………………………. byen med de …………………………….
+menneskene. Flyturen gikk fort og etter bare to timer landet de i …………………………….
+Frankrike.
+I Frankrike var det kjempe ……………………………. vær og det var …………………………….
+palmer. De så til og med et……………………………. villsvin med ……………………………. tenner.
+De dro til det……………………………. hotellet og sjekket inn hos den …………………………….
+resepsjonisten. De fikk et ……………………………. rom med ……………………………. utsikt mot
+havet. Langt ute på havet så de en ……………………………. seilskute med et
+……………………………. seil. De dro på den ……………………………. stranden og spiste
+……………………………. pizza til lunsj.
+-->
